@@ -2,7 +2,7 @@
 
 # ☕ Practic JAVA
 
-### Колекція практичних робіт з Java
+### Колекція робіт з Java
 
 <img src="https://img.shields.io/badge/Java-26-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 26">
 <img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA">
@@ -13,17 +13,18 @@
 
 ## Про репозиторій
 
-Цей репозиторій містить **усі практичні роботи з Java**.
+Цей репозиторій містить **усі роботи з Java**.
 
-Кожна практична зберігається окремо, щоб завдання, структура та код не змішувалися між собою.
+Кожна робота зберігається окремо, щоб завдання, структура та код не змішувалися між собою.
 
 ---
 
-## Практичні
+## Роботи
 
-| Практична | Статус | Тема |
+| Робота | Статус | Тема |
 |---|:---:|---|
 | [**Практична №1**](./src/practic_1) | ✅ Виконано | Console output, escape sequences, arithmetic, ASCII Art |
+| [**ДЗ до практичної роботи №2**](./src/dz_do_practic_2) | ✅ Виконано | Змінні, типи даних, оператори та математичні обчислення в Java |
 
 ---
 
