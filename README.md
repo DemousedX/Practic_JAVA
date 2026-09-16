@@ -1,43 +1,43 @@
 <div align="center">
 
-# ☕ Practic JAVA
+# ☕ Практичні роботи з Java
 
-### Колекція практичних робіт з Java
-
-<img src="https://img.shields.io/badge/Java-26-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 26">
-<img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA">
+**Олександр Денисенко · КНД-11**
 
 </div>
 
----
+У проєкті зібрані практичні роботи №1–7 і всі п'ять домашніх завдань до практичних №2–6. Матеріали-вимоги збережені в папці `Практичні і дз`.
 
-## Про репозиторій
+## Як запустити
 
-Цей репозиторій містить **усі практичні роботи з Java**.
+1. Відкрийте проєкт у IntelliJ IDEA та запустіть `Main`.
+2. Виберіть номер роботи та номер завдання.
+3. Для прямого запуску відкрийте `Ex1`–`Ex40` у практичній №1, `PracticeNNTaskNN` у практичних №2–7 або клас потрібного ДЗ й натисніть **Run**.
 
-Кожна практична зберігається окремо, щоб завдання, структура та код не змішувалися між собою.
+Меню запускає вибрану вправу в окремому процесі, тому програми з `Scanner` можуть самостійно читати введення та завершувати його.
 
----
+## Практичні роботи
 
-## Практичні
+| Робота | Пакет | Кількість |
+|---|---|---:|
+| [Практична №1: консольний вивід](./src/semester1/practice01) | `semester1.practice01` | 40 |
+| [Практична №2: типи й обчислення](./src/semester1/practice02) | `semester1.practice02` | 40 |
+| [Практична №3: введення, умови та switch](./src/semester1/practice03) | `semester1.practice03` | 40 |
+| [Практична №4: цикли та приведення типів](./src/semester1/practice04) | `semester1.practice04` | 40 |
+| [Практична №5: масиви](./src/semester1/practice05) | `semester1.practice05` | 40 |
+| [Практична №6: класи, методи й інкапсуляція](./src/semester1/practice06) | `semester1.practice06` | 40 |
+| [Практична №7: конструктори та об'єкти](./src/semester1/practice07) | `semester1.practice07` | 40 |
 
-| Практична | Статус | Тема |
-|---|:---:|---|
-| [**Практична №1**](./src/practic_1) | ✅ Виконано | Console output, escape sequences, arithmetic, ASCII Art |
+## Домашні завдання
 
----
+Кожен варіант має власний клас запуску; реалізовано всі завдання з кожного ДЗ.
 
-## Автор
+| ДЗ до практичної | Пакет | Завдань |
+|---|---|---:|
+| [№2](./src/semester1/practice02/homework) | `semester1.practice02.homework` | 5 |
+| [№3](./src/semester1/practice03/homework) | `semester1.practice03.homework` | 5 |
+| [№4](./src/semester1/practice04/homework) | `semester1.practice04.homework` | 5 |
+| [№5](./src/semester1/practice05/homework) | `semester1.practice05.homework` | 5 |
+| [№6](./src/semester1/practice06/homework) | `semester1.practice06.homework` | 5 |
 
-<div align="center">
-
-**Денисенко Олександр Миколайович**  
-Група: `КНД-11`  
-Спеціальність: `Комп'ютерні науки`
-
-<br>
-
-<a href="https://demoused.pp.ua"><img src="https://img.shields.io/badge/Portfolio-demoused.pp.ua-7C3AED?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio"></a>
-<a href="https://t.me/Demoused"><img src="https://img.shields.io/badge/Telegram-@Demoused-229ED9?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
-
-</div>
+У підписах є кілька легких Demoused-жартів. Навчальні приклади й відповіді до умов залишаються коректними.
