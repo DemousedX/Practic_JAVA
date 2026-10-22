@@ -3,15 +3,11 @@ import java.io.FileDescriptor;
 import java.io.FileInputStream;
 import java.nio.charset.StandardCharsets;
 
-/** Меню робіт Олександра Денисенка (КНД-11). */
+/** Меню домашніх завдань Олександра Денисенка (КНД-11). */
 public class Main {
     private static final FileInputStream RAW_INPUT = new FileInputStream(FileDescriptor.in);
-    private static final String[] SECTIONS = {
-            "", "Практична №1 — перший проєкт і консольний вивід",
-            "Практична №2 — змінні й обчислення", "Практична №3 — Scanner, умови та switch",
-            "Практична №4 — цикли й приведення типів", "Практична №5 — масиви",
-            "Практична №6 — класи, об'єкти та інкапсуляція", "Практична №7 — конструктори та взаємодія об'єктів",
-            "ДЗ до практичної №2 — валюта, числа, трикутник, геометрія, RPG",
+    private static final String[] HOMEWORKS = {
+            "", "ДЗ до практичної №2 — валюта, числа, трикутник, геометрія, RPG",
             "ДЗ до практичної №3 — пальне, доставка, скоринг, Smart Home, квест",
             "ДЗ до практичної №4 — цикли, Fibonacci, прості числа, Brawl Stars",
             "ДЗ до практичної №5 — продажі, склад, кінотеатр, Dota 2, Roblox",
@@ -27,23 +23,22 @@ public class Main {
         }
         while (true) {
             printMenu();
-            int section = read("Оберіть роботу (0 — вихід): ");
-            if (section == 0) {
+            int homework = read("Оберіть ДЗ (0 — вихід): ");
+            if (homework == 0) {
                 System.out.println("До зустрічі! Нехай компілятор сьогодні буде добрим.");
                 return;
             }
-            if (section < 1 || section >= SECTIONS.length) {
-                System.out.println("Такої роботи немає.");
+            if (homework < 1 || homework >= HOMEWORKS.length) {
+                System.out.println("Такого ДЗ немає.");
                 continue;
             }
-            System.out.println(SECTIONS[section]);
-            int maxTask = section <= 7 ? 40 : 5;
-            int task = read("Номер завдання (1–" + maxTask + "): ");
-            if (task < 1 || task > maxTask) {
+            System.out.println(HOMEWORKS[homework]);
+            int task = read("Номер завдання (1–5): ");
+            if (task < 1 || task > 5) {
                 System.out.println("Номер поза межами. Спробуйте ще раз.");
                 continue;
             }
-            launch(section, task);
+            launch(homework, task);
             return;
         }
     }
@@ -60,7 +55,7 @@ public class Main {
         }
     }
 
-    /** Читає рівно один рядок, не буферизуючи ввід, потрібний дочірній програмі. */
+    /** Читає рівно один рядок, не буферизуючи ввід для дочірньої програми. */
     private static String readLine() {
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         try {
@@ -79,32 +74,26 @@ public class Main {
         catch (NumberFormatException e) { return -1; }
     }
 
-    private static void launch(int section, int task) {
-        String className;
-        String[] childArgs = new String[0];
-        if (section == 1) className = "semester1.practice01.Ex" + task;
-        else if (section >= 2 && section <= 7) {
-            className = String.format("semester1.practice%02d.Practice%02dTask%02d", section, section, task);
-        } else {
-            className = switch (section) {
-                case 8 -> "semester1.practice02.homework." + new String[]{"", "Task1CurrencyExchange", "Task2NumberAnalysis", "Task3TriangleClassifier", "Task4HeronGeometry", "Task5RpgHero"}[task];
-                case 9 -> "semester1.practice03.homework." + new String[]{"", "Task1FuelCalculator", "Task2DeliveryService", "Task3CreditScoring", "Task4SmartHomeClimate", "Task5InteractiveQuest"}[task];
-                case 10 -> "semester1.practice04.homework." + new String[]{"", "Task1RangeStatistics", "Task2DigitAnalyzer", "Task3FibonacciSeries", "Task4PrimeFinder", "Task5BrawlStarsArena"}[task];
-                case 11 -> "semester1.practice05.homework." + new String[]{"", "Task1DailySales", "Task2WarehouseInventory", "Task3CinemaBooking", "Task4DotaMatchStats", "Task5RobloxPetSimulator"}[task];
-                case 12 -> "semester1.practice06.homework." + new String[]{"", "Task1Fraction", "Task2QuadraticEquation", "Task3Vector2D", "Task4MatrixSolver", "Task5AnimeHeroBattle"}[task];
-                default -> null;
-            };
-        }
-        if (className == null) {
-            System.out.println("Невідома робота.");
+    private static void launch(int homework, int task) {
+        String[] classes = switch (homework) {
+            case 1 -> new String[]{"", "Task1CurrencyExchange", "Task2NumberAnalysis", "Task3TriangleClassifier", "Task4HeronGeometry", "Task5RpgHero"};
+            case 2 -> new String[]{"", "Task1FuelCalculator", "Task2DeliveryService", "Task3CreditScoring", "Task4SmartHomeClimate", "Task5InteractiveQuest"};
+            case 3 -> new String[]{"", "Task1RangeStatistics", "Task2DigitAnalyzer", "Task3FibonacciSeries", "Task4PrimeFinder", "Task5BrawlStarsArena"};
+            case 4 -> new String[]{"", "Task1DailySales", "Task2WarehouseInventory", "Task3CinemaBooking", "Task4DotaMatchStats", "Task5RobloxPetSimulator"};
+            case 5 -> new String[]{"", "Task1Fraction", "Task2QuadraticEquation", "Task3Vector2D", "Task4MatrixSolver", "Task5AnimeHeroBattle"};
+            default -> null;
+        };
+        if (classes == null || task < 1 || task >= classes.length) {
+            System.out.println("Невідоме ДЗ або завдання.");
             return;
         }
+        String packageName = String.format("semester1.practice%02d.homework", homework + 1);
+        String className = packageName + "." + classes[task];
         try {
             String executable = System.getProperty("java.home") + "/bin/"
                     + (System.getProperty("os.name").toLowerCase().contains("win") ? "java.exe" : "java");
             ProcessBuilder process = new ProcessBuilder(executable, "-Dfile.encoding=UTF-8", "-cp",
                     System.getProperty("java.class.path"), className);
-            process.command().addAll(java.util.List.of(childArgs));
             process.inheritIO();
             int exitCode = process.start().waitFor();
             if (exitCode != 0) System.out.println("Завдання завершилося з кодом " + exitCode + ".");
@@ -115,15 +104,15 @@ public class Main {
 
     private static void printHeader() {
         System.out.println("============================================================");
-        System.out.println("                 ПРАКТИЧНІ ТА ДЗ З JAVA");
+        System.out.println("                    ДОМАШНІ ЗАВДАННЯ З JAVA");
         System.out.println("              Олександр Денисенко | КНД-11");
-        System.out.println("          Прогамування без паніки: якщо що — це демо!");
+        System.out.println("             Прогамування без паніки: це демо!");
         System.out.println("============================================================");
     }
 
     private static void printMenu() {
-        System.out.println("\nРОБОТИ:");
-        for (int i = 1; i < SECTIONS.length; i++) System.out.printf("%2d — %s%n", i, SECTIONS[i]);
+        System.out.println("\nДОМАШНІ ЗАВДАННЯ:");
+        for (int i = 1; i < HOMEWORKS.length; i++) System.out.printf("%2d — %s%n", i, HOMEWORKS[i]);
         System.out.println(" 0 — Вийти");
     }
 }

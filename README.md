@@ -1,43 +1,31 @@
 <div align="center">
 
-# ☕ Practic JAVA
+# ☕ Домашні завдання з Java
 
-### Колекція практичних робіт з Java
-
-<img src="https://img.shields.io/badge/Java-26-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 26">
-<img src="https://img.shields.io/badge/IntelliJ_IDEA-IDE-000000?style=for-the-badge&logo=intellijidea&logoColor=white" alt="IntelliJ IDEA">
+**Олександр Денисенко · КНД-11**
 
 </div>
 
----
+У цьому репозиторії зібрані домашні завдання до практичних №2–6 та матеріали з умовами. Вправи мають окремі класи запуску; обирати завдання можна через меню `Main`.
 
-## Про репозиторій
+## Запуск
 
-Цей репозиторій містить **усі практичні роботи з Java**.
+1. Відкрийте проєкт у IntelliJ IDEA.
+2. Запустіть клас `Main` у папці `src`.
+3. Виберіть номер ДЗ, а потім номер завдання від 1 до 5.
 
-Кожна практична зберігається окремо, щоб завдання, структура та код не змішувалися між собою.
+Кожне домашнє завдання також можна запустити напряму через клас `Task...` у відповідному пакеті `semester1.practiceNN.homework`.
 
----
+## Домашні завдання
 
-## Практичні
+| До практичної | Пакет | Завдання |
+|---|---|---:|
+| №2 — валюта, аналіз чисел, трикутник, геометрія, RPG | `semester1.practice02.homework` | 5 |
+| №3 — пальне, доставка, скоринг, Smart Home, квест | `semester1.practice03.homework` | 5 |
+| №4 — цикли, Fibonacci, прості числа, Brawl Stars | `semester1.practice04.homework` | 5 |
+| №5 — продажі, склад, кінотеатр, Dota 2, Roblox | `semester1.practice05.homework` | 5 |
+| №6 — дроби, рівняння, вектори, матриці, Аста | `semester1.practice06.homework` | 5 |
 
-| Практична | Статус | Тема |
-|---|:---:|---|
-| [**Практична №1**](./src/practic_1) | ✅ Виконано | Console output, escape sequences, arithmetic, ASCII Art |
+## Файли з умовами
 
----
-
-## Автор
-
-<div align="center">
-
-**Денисенко Олександр Миколайович**  
-Група: `КНД-11`  
-Спеціальність: `Комп'ютерні науки`
-
-<br>
-
-<a href="https://demoused.pp.ua"><img src="https://img.shields.io/badge/Portfolio-demoused.pp.ua-7C3AED?style=flat-square&logo=googlechrome&logoColor=white" alt="Portfolio"></a>
-<a href="https://t.me/Demoused"><img src="https://img.shields.io/badge/Telegram-@Demoused-229ED9?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
-
-</div>
+Початкові умови збережено в [папці «Практичні і дз»](./Практичні%20і%20дз/). README-файл навмисно короткий: відкрити `Main`, вибрати ДЗ, не панікувати.
