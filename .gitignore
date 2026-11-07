@@ -4,6 +4,37 @@ out/
 !**/src/test/**/out/
 .kotlin
 
+# IntelliJ IDEA and local build output
+.idea/
+*.iml
+target/
+.build-check*/
+.tmp/
+*.class
+
+# Build tools and generated files
+/build/
+/.gradle/
+/.build*/
+*.log
+hs_err_pid*
+replay_pid*
+
+# Temporary files and local backups
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*.swo
+*~
+/backups/
+
+# Local environment settings
+.env
+.env.*
+!.env.example
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -28,3 +59,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Windows ###
+Thumbs.db
+Desktop.ini
