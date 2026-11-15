@@ -13,7 +13,8 @@ public class Main {
     "ДЗ до практичної N5 - продажі, склад, кінотеатр, Dota 2, Roblox",
     "ДЗ до практичної N6 - дроби, рівняння, вектори, матриці, Аста",
     "ДЗ до практичної N8 - наслідування та інкапсуляція",
-    "ДЗ до практичної N9 - композиція, матриці, кіберімпланти"
+    "ДЗ до практичної N9 - композиція, матриці, кіберімпланти",
+    "ДЗ до практичної N10 - поліморфізм, інтерфейси, чисельні методи"
   };
 
   public static void main(String[] args) {
@@ -79,13 +80,13 @@ public class Main {
   }
 
   private static void launch(int homework, int task) {
-    if (homework < 1 || homework > 7 || task < 1 || task > 5) {
+    if (homework < 1 || homework >= HOMEWORKS.length || task < 1 || task > 5) {
       System.out.println("Невідоме домашнє завдання або номер задачі");
       return;
     }
     int number = homework < 6 ? homework + 1 : homework + 2;
     String packageName = String.format("semester1.practice%02d.homework", number);
-    String className = packageName + ".Homework0" + number;
+    String className = packageName + String.format(".Homework%02d", number);
     try {
       String executable =
           System.getProperty("java.home")
