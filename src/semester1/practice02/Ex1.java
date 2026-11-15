@@ -10,8 +10,8 @@ public final class Ex1 {
     Locale.setDefault(Locale.US);
 
     System.out.printf("%n--- Практична N2, завдання 01 ---%n");
-    int age = 18;
-    double height = 1.78;
+    int age = 17;
+    double height = 1.69;
     char firstLetter = 'О';
     boolean isStudent = true;
     System.out.println(age);

@@ -25,7 +25,7 @@ public class Ex2 {
 
   public static void main(String[] args) {
     semester1.ConsoleOutput.useUtf8();
-    new Student("Олександр", 18, 4.7).printStudent();
+    new Student("Олександр", 17, 4.7).printStudent();
     new Student("Іван", 10, 7).printStudent();
   }
 }
